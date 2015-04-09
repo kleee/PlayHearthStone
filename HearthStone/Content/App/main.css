@@ -1,0 +1,187 @@
+﻿body {
+	background: url("Images/bg.png") repeat-y scroll center 0 #9d7748 !important;
+}
+
+
+/* header */
+
+.header {
+    margin: 10px;
+}
+
+.header img {
+    margin-top: -20px;
+    margin-bottom: -10px;
+	display: block;
+    width: 400px;
+}
+
+
+/* command-panel */
+
+.command-panel {
+    width: 100%;
+    height: 260px;
+    margin: 10px;
+    padding: 10px;
+    border-top: 1px solid gold;
+    border-bottom: 1px solid gold;
+    opacity: 1;
+}
+
+.command-panel.closed {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    transition: visibility 0 0.5s;
+}
+
+.command-panel .deck-content {
+    height: 200px;
+    width: 380px;
+}
+
+/* main-panel */
+
+.main-panel {
+    height: 520px;
+}
+
+.main-panel .log-panel {
+    display: block;
+    float: right;
+    width: 200px;
+    height: 520px;
+}
+
+.main-panel #ennemy-board {
+    display: block;
+    height: 260px;
+}
+
+.main-panel #my-board {
+    height: 260px;
+    border: 1px dotted #9d7748;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-panel #my-board.ui-state-active {
+    background-color: white;
+    opacity: 0.1;
+}
+
+.main-panel #my-board.ui-state-hover {
+    background-color: yellow;
+    opacity: 0.1;
+}
+
+.main-panel #my-board .card {
+    height: 257px;
+    width: 190px;
+}
+
+.main-panel .option-panel {
+    display: block;
+    float: left;
+    width: 133px;
+}
+
+.main-panel .option-panel .trash img {
+    cursor: pointer;
+    height: 201px;
+    width: 133px;
+    opacity: 0.8;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    filter: gray;
+}
+
+.main-panel .option-panel .trash.ui-state-active img {
+    border: 1px solid black;
+    border-radius: 3px;
+    opacity: 1;
+}
+
+.main-panel .option-panel .trash.ui-state-hover img {
+    /*background-color: yellow;*/
+    /*opacity: 0.1;*/
+    opacity: 1;
+    -webkit-filter: none;
+    filter: none;
+}
+
+.main-panel .option-panel .draw .draw-text {
+    position: relative;
+    top: -105px;
+    left: 29px;
+    font-weight: bold;
+    color: white;
+}
+
+.main-panel .option-panel .draw img {
+    cursor: pointer;
+    height: 201px;
+    width: 133px;
+    opacity: 0.8;
+}
+
+.main-panel .option-panel .draw img:hover {
+    opacity: 1;
+    transition: all .15s ease;
+	-moz-transition: all .15s ease;
+	-webkit-transition: all .15s ease;
+}
+
+/* bottom-panel */
+
+.bottom-panel {
+    height: 380px;
+    width: 100%;
+}
+
+.bottom-panel .hand-panel {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bottom-panel .card {
+    height: 285px;
+    width: 210px;
+    display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+	transition: all .15s ease;
+	-moz-transition: all .15s ease;
+	-webkit-transition: all .15s ease;
+}
+
+/*.bottom-panel .card:hover {
+    height: 380px;
+    width: 280px;
+    top: 24px;
+	left: -35px;
+	margin-right: -70px;
+	margin-top: -100px;
+	position: relative;
+	transition: all .15s ease;
+	-moz-transition: all .15s ease;
+	-webkit-transition: all .15s ease;
+	z-index: 9;
+}*/
+
+
+.grab-card {
+    height: 142px;
+    width: 105px;
+    opacity: 0.5;
+}

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+@{
+    var defaultDeck1 = @"http://dp-0144/Heartstone/UserStory.png
+http://dp-0144/Heartstone/VivantRouelle.png
+http://dp-0144/Heartstone/6Doine2Sql.png
+http://dp-0144/Heartstone/Sprint.png
+http://dp-0144/Heartstone/RDAcademy.png
+http://dp-0144/Heartstone/Patch.png
+http://dp-0144/Heartstone/Git-blame.png
+http://dp-0144/Heartstone/Micro-David.png
+http://dp-0144/Heartstone/Micro-Kedar.png
+http://dp-0144/Heartstone/Retourauxsources.png
+http://dp-0144/Heartstone/PeerReview.png
+http://dp-0144/Heartstone/TechnicalReview.png
+http://dp-0144/Heartstone/TechLeadReview.png";
+}
+
+<html>
+    <head>
+        <title>Play HearthStone</title>
+
+        <link rel="stylesheet" type="text/css" href="~/Content/App/main.css" />
+        <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-theme.css" />
+
+        @*<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.4/jquery-ui.min.js"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js"></script>*@
+        <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+        <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+        <script src="~/signalr/hubs"></script>
+        <script src="~/Scripts/App/main.js"></script>
+
+    </head>
+    <body>
+
+        <div class="header">
+            <img src="~/Content/App/Images/logo.png" />
+        </div>
+        
+        <div class="command-panel">
+            <div>
+                <textarea class="deck-content" id="deck-content">@defaultDeck1</textarea>
+            </div>
+
+            <input type="button" value="Load Deck" class="btn" onclick="LoadDeck()">
+
+            @*<input type="button" value="Close" class="btn" onclick="CloseCommandPanel()">*@
+        </div>
+
+        <div class="main-panel">
+            
+            <div id="discussion" class="log-panel"></div>
+
+            <div id="option" class="option-panel">
+                <div id="trash" class="trash"><img src="~/Content/App/Images/card_back10.png" /></div>
+                <div id="draw" class="draw" onclick="DrawCard()">
+                    <img src="~/Content/App/Images/card_back.png" />
+                    <div class="draw-text">Draw Card</div>
+                </div>
+            </div>
+
+            <div id="ennemy-board"></div>
+
+            <div id="my-board"></div>
+        </div>
+
+        <div class="bottom-panel">
+            <div id="hand-panel" class="hand-panel">
+                <!-- hand cards here -->
+            </div>
+        </div>
+
+</body>
+</html>
