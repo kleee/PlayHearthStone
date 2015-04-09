@@ -23,13 +23,11 @@ function DrawCard() {
 function addCardOnHand(card) {
     $('#hand-panel').append("<img src='" + card + "' class='card'></img>");
 
-    //$(".card").draggable();
-
     $(".card").draggable({
         cursor: "grabbing",
         cursorAt: { top: -5, left: -5 },
         helper: function (event) {
-            console.log(event.target.src);
+            //console.log(event.target.src);
             return $("<img src='" + event.target.src + "' class='grab-card'/>");
         }
     });
@@ -37,6 +35,10 @@ function addCardOnHand(card) {
 
 function playCard(card) {
     $('#my-board').append(card[0]);
+
+    console.log(card[0].src);
+
+    game.server.playCard("1", card[0].src);
 }
 
 function removeCard(card) {
