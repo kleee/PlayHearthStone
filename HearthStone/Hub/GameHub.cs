@@ -18,5 +18,10 @@ namespace HearthStone.Hub
 
             Clients.All.CardPlayed(playerName, cardUrl);
         }
+
+        public void RemoveCard(string playerName, string cardUrl)
+        {
+            Clients.All.CardRemoved(playerName, cardUrl);
+        }
     }
 }
