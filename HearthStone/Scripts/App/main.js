@@ -1,6 +1,7 @@
 ﻿
 var ROOT = '/PlayHearthStone';
 var game = $.connection.gameHub;
+var playerName;
 
 function LoadDeck() {
     var value = $('#deck-content')[0].value;
@@ -13,6 +14,9 @@ function LoadDeck() {
         $.get(ROOT + "/api/game/drawcard", addCardOnHand);
         $.get(ROOT + "/api/game/drawcard", addCardOnHand);
         $.get(ROOT + "/api/game/drawcard", addCardOnHand);
+
+        // Store player name
+        playerName = $("#player-name")[0].value;
     });
 }
 
@@ -36,9 +40,7 @@ function addCardOnHand(card) {
 function playCard(card) {
     $('#my-board').append(card[0]);
 
-    console.log(card[0].src);
-
-    game.server.playCard("1", card[0].src);
+    game.server.playCard(playerName, card[0].src);
 }
 
 function removeCard(card) {
@@ -55,6 +57,16 @@ game.client.broadcastMessage = function (name, message) {
     // Add the message to the page. 
     $('#discussion').append('<li><strong>' + name + '</strong>' + message + '</li>');
 };
+
+game.client.CardPlayed = function (owner, cardUrl) {
+
+    if (owner != playerName) {
+        var img = $("<img>");
+        img.attr('src', cardUrl);
+        img.addClass("card");
+        $('#ennemy-board').append(img);
+    }
+}
 
 $.connection.hub.start();
 

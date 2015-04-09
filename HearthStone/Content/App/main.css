@@ -41,7 +41,7 @@
 }
 
 .command-panel .deck-content {
-    height: 200px;
+    height: 180px;
     width: 380px;
 }
 
@@ -61,6 +61,14 @@
 .main-panel #ennemy-board {
     display: block;
     height: 260px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-panel #ennemy-board .card {
+    height: 257px;
+    width: 190px;
 }
 
 .main-panel #my-board {

@@ -15,6 +15,8 @@ namespace HearthStone.Hub
             var cardName = cardUrl.Split('/').Last().Split('.').First();
 
             Clients.All.broadcastMessage("Player " + playerName + ": ", "Played " + cardName);
+
+            Clients.All.CardPlayed(playerName, cardUrl);
         }
     }
 }
